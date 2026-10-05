@@ -1,0 +1,58 @@
+:root{--bg:#f3f6fb;--card:#fff;--text:#18212f;--muted:#5d6b82;--line:#e2e8f1;--accent:#2f7d5b;--accent2:#e7f4ee;--grad:linear-gradient(135deg,#2f7d5b,#3b6fb6);--warn:#b7791f;--warnbg:#fff4d9;--shadow:0 4px 18px rgba(30,50,90,.08);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141d;--card:#171e2b;--text:#e8edf5;--muted:#9aa7bd;--line:#273144;--accent:#5fc39a;--accent2:#15302a;--grad:linear-gradient(135deg,#1f5d44,#27508f);--warn:#f0b855;--warnbg:#2c2410;--shadow:0 4px 18px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#0f141d;--card:#171e2b;--text:#e8edf5;--muted:#9aa7bd;--line:#273144;--accent:#5fc39a;--accent2:#15302a;--grad:linear-gradient(135deg,#1f5d44,#27508f);--warn:#f0b855;--warnbg:#2c2410;--shadow:0 4px 18px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+.layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{background:var(--card);border-right:1px solid var(--line);padding:22px 14px;position:sticky;top:env(safe-area-inset-top,0px);align-self:start;height:100vh}
+.brand{font-weight:800;font-size:1.05rem;display:flex;gap:8px;align-items:center;padding:0 8px 18px}
+.brand span{background:var(--grad);border-radius:10px;padding:4px 8px}
+nav{display:flex;flex-direction:column;gap:6px}
+nav button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;color:var(--muted);font-weight:600;font-size:.95rem;transition:.15s}
+nav button:hover{background:var(--accent2);color:var(--accent)}
+nav button.active{background:var(--grad);color:#fff;box-shadow:var(--shadow)}
+nav .dot{margin-left:auto;font-size:.75rem}
+.content{min-width:0}
+header{background:var(--grad);color:#fff;padding:38px 28px 44px}
+header h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.2rem)}
+header p{margin:0;opacity:.9}
+main{max-width:980px;padding:0 20px 48px;margin:-22px auto 0;display:grid;gap:18px}
+.screen{display:none;gap:18px}
+.screen.show{display:grid}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.card h2{margin:0 0 12px;font-size:1.15rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.tag{display:inline-block;background:var(--accent2);color:var(--accent);border-radius:999px;padding:3px 14px;font-size:.85rem;font-weight:700;margin:0 6px 8px 0}
+.muted{color:var(--muted)}
+a{color:var(--accent);font-weight:600}
+.metric{border:2px dashed var(--line);border-radius:14px;padding:20px;text-align:center}
+.metric .label{font-weight:700}
+.metric .value{font-size:2.2rem;font-weight:800;color:var(--muted);margin:4px 0 8px}
+.uc{display:inline-block;background:var(--warnbg);color:var(--warn);border-radius:999px;padding:3px 14px;font-size:.8rem;font-weight:700}
+.under{text-align:center;padding:56px 20px;border:2px dashed var(--line)}
+.under .big{font-size:3rem}
+.under h2{justify-content:center}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 0 24px}
+
+.card{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease,box-shadow .2s ease}
+.card.in{opacity:1;transform:none}
+.card.in.settled:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(30,50,90,.14)}
+header{background-size:200% 200%;animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{from{background-position:0% 50%}to{background-position:100% 50%}}
+.under .big{display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;max-width:240px;margin:18px auto 0}
+.bar i{display:block;height:100%;width:40%;border-radius:99px;background:var(--grad);animation:slide 1.8s ease-in-out infinite}
+@keyframes slide{0%{margin-left:-40%}100%{margin-left:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+@media (max-width:760px){
+ .layout{grid-template-columns:1fr}
+ aside{position:sticky;height:auto;z-index:5;border-right:0;border-bottom:1px solid var(--line);padding:10px}
+ .brand{display:none}
+ nav{flex-direction:row;overflow-x:auto;gap:6px}
+ nav button{white-space:nowrap;padding:9px 12px}
+ nav .dot{display:none}
+ header{padding:28px 18px 38px}
+}
