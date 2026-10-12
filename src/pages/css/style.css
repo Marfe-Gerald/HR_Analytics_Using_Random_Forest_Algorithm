@@ -1,0 +1,70 @@
+/* ===== Global styles: palette, layout, sidebar, header, cards ===== */
+:root{
+  /* Palette */
+  --c1:#90E0EF; --c2:#CAF0F8; --c3:#DDF5FC; --c4:#EEFAFE; --c5:#FAFEFF;
+  /* Text + accent (darker blues for readable contrast on the pale palette) */
+  --ink:#16384d; --muted:#4d6b7e; --brand:#0a6a94;
+  --line:#CAF0F8; --shadow:0 2px 14px rgba(10,106,148,.08);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--c4);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.6}
+a{color:var(--brand);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+.muted{color:var(--muted)}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.content{min-width:0}
+
+/* Sidebar (built by js/main.js) */
+.sidebar{background:var(--c5);border-right:1px solid var(--line);padding:24px 14px;position:sticky;top:0;height:100vh;align-self:start}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1rem;padding:0 10px 22px;color:var(--ink)}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--c1);display:grid;place-items:center;color:var(--ink)}
+.nav-label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 12px 8px}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:600;font-size:.93rem;transition:background .15s,color .15s}
+.nav a:hover{background:var(--c3);color:var(--ink);text-decoration:none}
+.nav a.active{background:var(--c1);color:var(--ink)}
+.nav svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav .pill{margin-left:auto;font-size:.65rem;font-weight:700;background:var(--c2);color:var(--brand);padding:2px 8px;border-radius:99px}
+.nav a.active .pill{background:var(--c5)}
+
+/* Page header */
+.page-header{background:linear-gradient(120deg,var(--c1),var(--c2));padding:34px 32px 56px;border-bottom:1px solid var(--line)}
+.page-header .eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:700;margin:0 0 6px}
+.page-header h1{margin:0;font-size:clamp(1.45rem,3.6vw,2rem);font-weight:700}
+.page-header p{margin:6px 0 0;color:var(--muted)}
+
+/* Main + cards */
+main{max-width:980px;margin:-32px auto 0;padding:0 24px 48px;display:grid;gap:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--c5);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow);
+  opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease,box-shadow .2s ease,border-color .2s ease}
+.card.in{opacity:1;transform:none}
+.card.in.settled:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,106,148,.14);border-color:var(--c1)}
+.card h2{margin:0 0 12px;font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:10px}
+.card h2::before{content:"";width:4px;height:18px;border-radius:2px;background:var(--c1)}
+.tag{display:inline-block;background:var(--c3);color:var(--brand);border:1px solid var(--c1);border-radius:99px;padding:2px 14px;font-size:.82rem;font-weight:700;margin-bottom:10px}
+.badge{display:inline-block;background:var(--c2);color:var(--brand);border:1px dashed var(--c1);border-radius:99px;padding:3px 14px;font-size:.78rem;font-weight:700}
+
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:0 0 24px}
+
+/* Mobile: sidebar becomes a scrollable tab bar */
+@media (max-width:780px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:sticky;top:0;z-index:5;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}
+  .brand,.nav-label{display:none}
+  .nav{flex-direction:row;overflow-x:auto;gap:6px}
+  .nav a{white-space:nowrap;padding:9px 12px}
+  .nav .pill{display:none}
+  .page-header{padding:26px 18px 48px}
+  main{padding:0 14px 40px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .card{opacity:1;transform:none}
+}

@@ -1,0 +1,5 @@
+/* ===== Dashboard page only (index.html) ===== */
+.metric{border:2px dashed var(--c1);background:var(--c4);border-radius:12px;padding:22px;text-align:center}
+.metric .label{font-weight:700;color:var(--ink)}
+.metric .value{font-size:2.2rem;font-weight:700;color:var(--muted);margin:4px 0 10px}
+#project-description{margin:0}
