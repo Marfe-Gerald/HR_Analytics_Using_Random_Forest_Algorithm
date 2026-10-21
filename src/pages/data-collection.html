@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Data Collection Screen | HR Analytics</title>
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/under-construction.css">
+<link rel="stylesheet" href="css/data-collection.css">
 </head>
 <body>
 <div class="layout">
@@ -14,20 +14,70 @@
     <header class="page-header">
       <p class="eyebrow">Screen</p>
       <h1>Data Collection Screen</h1>
-      <p>This section is under construction.</p>
+      <p>Enter the employee details used as model inputs.</p>
     </header>
     <main>
-      <section class="card under">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
-        <h2>Data Collection Screen</h2>
-        <span class="badge">Under Construction</span>
-        <p class="muted">This screen is coming soon.</p>
-        <div class="bar"><i></i></div>
+      <section class="card">
+        <h2>Input Variables <span class="badge" style="margin-left:auto">Placeholder</span></h2>
+        <form id="input-form">
+          <div class="form-grid">
+          <div class="field">
+            <label for="satisfaction_level">Satisfaction Level</label>
+            <code>satisfaction_level</code>
+            <input id="satisfaction_level" name="satisfaction_level" type="number" step="0.01" min="0" max="1" placeholder="e.g. 0.38" required>
+          </div>
+          <div class="field">
+            <label for="last_evaluation">Last Evaluation</label>
+            <code>last_evaluation</code>
+            <input id="last_evaluation" name="last_evaluation" type="number" step="0.01" min="0" max="1" placeholder="e.g. 0.53" required>
+          </div>
+          <div class="field">
+            <label for="number_project">Number of Projects</label>
+            <code>number_project</code>
+            <input id="number_project" name="number_project" type="number" step="1" min="0" placeholder="e.g. 2" required>
+          </div>
+          <div class="field">
+            <label for="average_monthly_hours">Average Monthly Hours</label>
+            <code>average_monthly_hours</code>
+            <input id="average_monthly_hours" name="average_monthly_hours" type="number" step="1" min="0" placeholder="e.g. 157" required>
+          </div>
+          <div class="field">
+            <label for="time_spend_company">Years at Company</label>
+            <code>time_spend_company</code>
+            <input id="time_spend_company" name="time_spend_company" type="number" step="1" min="0" placeholder="e.g. 3" required>
+          </div>
+          <div class="field">
+            <label for="Work_accident">Work Accident</label>
+            <code>Work_accident</code>
+            <select id="Work_accident" name="Work_accident" required>
+              <option value="" disabled selected>Select</option>
+              <option value="0">No (0)</option>
+              <option value="1">Yes (1)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="promotion_last_5years">Promotion in Last 5 Years</label>
+            <code>promotion_last_5years</code>
+            <select id="promotion_last_5years" name="promotion_last_5years" required>
+              <option value="" disabled selected>Select</option>
+              <option value="0">No (0)</option>
+              <option value="1">Yes (1)</option>
+            </select>
+          </div>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn">Save Input</button>
+            <button type="reset" class="btn ghost">Clear</button>
+            <span id="form-status" class="status" role="status"></span>
+          </div>
+          <p class="note">Front-end only: values stay in this browser and are not sent to any server yet.</p>
+        </form>
       </section>
     </main>
     <footer>HR Analytics &bull; Random Forest &bull; ML Website Project</footer>
   </div>
 </div>
 <script src="js/main.js"></script>
+<script src="js/data-collection.js"></script>
 </body>
 </html>

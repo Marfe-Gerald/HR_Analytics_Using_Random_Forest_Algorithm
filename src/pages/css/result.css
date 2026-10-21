@@ -1,0 +1,12 @@
+/* ===== Result screen only ===== */
+.prediction{border:2px dashed var(--c1);background:var(--c4);border-radius:12px;padding:28px;text-align:center}
+.prediction .label{font-weight:700}
+.prediction .value{font-size:2.4rem;font-weight:700;color:var(--muted);margin:4px 0 10px}
+.metric{border:2px dashed var(--c1);background:var(--c4);border-radius:12px;padding:22px;text-align:center}
+.metric .label{font-weight:700}
+.metric .value{font-size:2rem;font-weight:700;color:var(--muted);margin:4px 0 10px}
+.kv{width:100%;border-collapse:collapse}
+.kv th,.kv td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--c2)}
+.kv th{font-weight:600;color:var(--muted);width:55%;font-family:Consolas,"SFMono-Regular",monospace;font-size:.88rem}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:0}
+.empty{text-align:center;color:var(--muted);padding:18px 0}

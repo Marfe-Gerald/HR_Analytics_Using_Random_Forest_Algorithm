@@ -5,8 +5,7 @@ const SCREENS = [
   { file: "index.html",              name: "Dashboard",              icon: '<path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7"/>' },
   { file: "data-collection.html",    name: "Data Collection Screen", uc: true, icon: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>' },
   { file: "result.html",             name: "Result Screen",          uc: true, icon: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>' },
-  { file: "history.html",            name: "History Screen",         uc: true, icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>' },
-  { file: "data-collection-2.html",  name: "Data-Collection Screen", uc: true, icon: '<path d="M12 3 2 8l10 5 10-5z"/><path d="m2 13 10 5 10-5"/>' }
+  { file: "history.html",            name: "History Screen",         uc: true, icon: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>' }
 ];
 
 // Sidebar

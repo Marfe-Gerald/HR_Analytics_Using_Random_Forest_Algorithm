@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>History Screen | HR Analytics</title>
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/under-construction.css">
+<link rel="stylesheet" href="css/history.css">
 </head>
 <body>
 <div class="layout">
@@ -14,20 +14,22 @@
     <header class="page-header">
       <p class="eyebrow">Screen</p>
       <h1>History Screen</h1>
-      <p>This section is under construction.</p>
+      <p>Previously entered inputs.</p>
     </header>
     <main>
-      <section class="card under">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
-        <h2>History Screen</h2>
-        <span class="badge">Under Construction</span>
-        <p class="muted">This screen is coming soon.</p>
-        <div class="bar"><i></i></div>
+      <section class="card">
+        <h2>Saved Inputs <span class="badge" style="margin-left:auto">Placeholder</span></h2>
+        <div class="toolbar">
+          <span class="muted">Most recent first (up to 50 entries).</span>
+          <button type="button" class="btn ghost" id="clear-history">Clear History</button>
+        </div>
+        <div id="history-wrap"></div>
       </section>
     </main>
     <footer>HR Analytics &bull; Random Forest &bull; ML Website Project</footer>
   </div>
 </div>
 <script src="js/main.js"></script>
+<script src="js/history.js"></script>
 </body>
 </html>

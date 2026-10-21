@@ -68,3 +68,10 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:0 0 24px}
   *{animation:none!important;transition:none!important}
   .card{opacity:1;transform:none}
 }
+
+/* Buttons (shared) */
+.btn{font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;border-radius:10px;padding:10px 20px;border:1px solid var(--c1);background:var(--c1);color:var(--ink);transition:background .15s,transform .15s}
+.btn:hover{background:var(--c2)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent}
+.btn.ghost:hover{background:var(--c3)}

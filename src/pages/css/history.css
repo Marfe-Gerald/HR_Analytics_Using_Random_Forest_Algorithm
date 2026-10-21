@@ -1,0 +1,9 @@
+/* ===== History screen only ===== */
+.table-wrap{overflow-x:auto;border:1px solid var(--c2);border-radius:12px}
+.history{width:100%;border-collapse:collapse;font-size:.88rem;min-width:760px}
+.history th,.history td{padding:10px 12px;text-align:left;white-space:nowrap}
+.history thead th{background:var(--c3);color:var(--ink);font-weight:700;border-bottom:1px solid var(--c1)}
+.history tbody tr:nth-child(even){background:var(--c4)}
+.history tbody td{border-bottom:1px solid var(--c2)}
+.empty{text-align:center;color:var(--muted);padding:28px 0}
+.toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
