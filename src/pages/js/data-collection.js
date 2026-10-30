@@ -7,7 +7,7 @@ const val = (id) => document.getElementById(id).value;
 // Live value next to each slider
 document.querySelectorAll("input[type=range]").forEach((r) => {
   const out = document.getElementById(r.id + "_out");
-  r.addEventListener("input", () => { out.textContent = Number(r.value).toFixed(2); });
+  r.addEventListener("input", () => { out.textContent = r.value + "%"; });
 });
 
 form.addEventListener("submit", async (e) => {
@@ -18,8 +18,8 @@ form.addEventListener("submit", async (e) => {
 
   // Keys must match the training columns the API expects
   const payload = {
-    satisfaction_level: parseFloat(val("satisfaction_level")/100),
-    last_evaluation: parseFloat(val("last_evaluation")/100),
+    satisfaction_level: parseFloat(val("satisfaction_level")) / 100,
+    last_evaluation: parseFloat(val("last_evaluation")) / 100,
     number_project: parseInt(val("number_project"), 10),
     average_monthly_hours: parseInt(val("average_monthly_hours"), 10),
     time_spend_company: parseInt(val("time_spend_company"), 10),

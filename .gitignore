@@ -20,9 +20,10 @@ out/
 *.pem
 *.key
 
-#Firebase
+# Firebase service account key (SECRET)
 firebase-key.json
-D:\Projects\MachineLearningCST9\api\firebase-key.json
+*firebase-adminsdk*.json
+
 # Logs
 logs/
 *.log
@@ -60,3 +61,4 @@ Thumbs.db
 .vite/
 .turbo/
 *.tmp
+__pycache__/
