@@ -20,6 +20,9 @@ out/
 *.pem
 *.key
 
+#Firebase
+firebase-key.json
+D:\Projects\MachineLearningCST9\api\firebase-key.json
 # Logs
 logs/
 *.log
