@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pandas
+joblib
+# Pin these two to the versions printed in Colab when you exported the model:
+scikit-learn
+imbalanced-learn
