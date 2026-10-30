@@ -7,7 +7,7 @@ const val = (id) => document.getElementById(id).value;
 // Live value next to each slider
 document.querySelectorAll("input[type=range]").forEach((r) => {
   const out = document.getElementById(r.id + "_out");
-  r.addEventListener("input", () => { out.textContent = Number(r.value).toFixed(2); });
+  r.addEventListener("input", () => { out.textContent = r.value + "%"; });
 });
 
 form.addEventListener("submit", async (e) => {
