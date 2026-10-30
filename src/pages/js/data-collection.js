@@ -18,8 +18,8 @@ form.addEventListener("submit", async (e) => {
 
   // Keys must match the training columns the API expects
   const payload = {
-    satisfaction_level: parseFloat(val("satisfaction_level")/100),
-    last_evaluation: parseFloat(val("last_evaluation")/100),
+    satisfaction_level: parseFloat(val("satisfaction_level")) / 100,
+    last_evaluation: parseFloat(val("last_evaluation")) / 100,
     number_project: parseInt(val("number_project"), 10),
     average_monthly_hours: parseInt(val("average_monthly_hours"), 10),
     time_spend_company: parseInt(val("time_spend_company"), 10),

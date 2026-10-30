@@ -16,7 +16,7 @@ if (!saved) {
   };
   const yesNo = (v) => (v === 1 ? "Yes" : "No");
   const shown = (k, v) => (k === "Work_accident" || k === "promotion_last_5years" ? yesNo(v) :
-  (k === "satisfaction_level" || k === "last_evaluation") ? Math.round(v * 100) + "%" : v);
+    (k === "satisfaction_level" || k === "last_evaluation") ? Math.round(v * 100) + "%" : v);
   const rows = Object.keys(labels).map((k) =>
     "<tr><th>" + labels[k] + "</th><td>" + shown(k, saved.input[k]) + "</td></tr>").join("");
 
