@@ -1,0 +1,10 @@
+/* ===== Under-construction screens (data-collection, result, history, ...) ===== */
+.under{text-align:center;padding:60px 20px;border-style:dashed;border-color:var(--c1)}
+.under h2{justify-content:center}
+.under h2::before{display:none}
+.under .icon{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;background:var(--c2);display:grid;place-items:center;color:var(--brand);animation:bob 2.6s ease-in-out infinite}
+.under .icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.bar{height:6px;border-radius:99px;background:var(--c2);overflow:hidden;max-width:240px;margin:22px auto 0}
+.bar i{display:block;height:100%;width:40%;border-radius:99px;background:var(--c1);animation:slide 1.8s ease-in-out infinite}
+@keyframes slide{0%{margin-left:-40%}100%{margin-left:100%}}

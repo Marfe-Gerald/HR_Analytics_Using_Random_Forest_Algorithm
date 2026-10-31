@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>History Screen | HR Analytics</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prediction.css">
+<link rel="stylesheet" href="css/history.css">
+</head>
+<body>
+<div class="layout">
+  <aside id="sidebar"></aside>
+  <div class="content">
+    <header class="page-header">
+      <p class="eyebrow">Screen</p>
+      <h1>History Screen</h1>
+      <p>Predictions you made earlier on this browser.</p>
+    </header>
+    <main>
+      <section class="card">
+        <h2>Your past predictions</h2>
+        <p id="history-status" class="muted">Loading&hellip;</p>
+        <div class="table-wrap"><table id="history-table" class="history" hidden>
+          <thead><tr>
+            <th>Date</th><th>Satisfaction</th><th>Evaluation</th><th>Projects</th>
+            <th>Hours/mo</th><th>Years</th><th>Salary</th><th>Accident</th><th>Promoted</th><th>Risk</th>
+          </tr></thead>
+          <tbody id="history-body"></tbody>
+        </table></div>
+        <button type="button" id="clear-btn" class="btn" hidden>Clear my history</button>
+      </section>
+    </main>
+    <footer>HR Analytics &bull; Random Forest &bull; ML Website Project</footer>
+  </div>
+</div>
+<script src="../utils/config.js"></script>
+<script src="../hooks/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/history.js"></script>
+</body>
+</html>
