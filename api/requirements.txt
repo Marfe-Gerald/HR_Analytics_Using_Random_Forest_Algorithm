@@ -5,5 +5,5 @@ joblib
 firebase-admin
 python-dotenv
 # Pin these two to the versions printed in Colab when you exported the model:
-scikit-learn
+scikit-learn==1.6.1
 imbalanced-learn
