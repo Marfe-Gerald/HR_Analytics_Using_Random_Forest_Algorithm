@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Data Collection Screen | HR Analytics</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prediction.css">
+</head>
+<body>
+<div class="layout">
+  <aside id="sidebar"></aside>
+  <div class="content">
+    <header class="page-header">
+      <p class="eyebrow">Screen</p>
+      <h1>Data Collection Screen</h1>
+      <p>Enter an employee&rsquo;s details to predict their attrition risk.</p>
+    </header>
+    <main>
+      <section class="card">
+        <h2>Employee Details</h2>
+        <form id="form">
+          <div class="form-grid">
+            <div class="field"><label for="satisfaction_level">Satisfaction level <output id="satisfaction_level_out">50%</output></label>
+              <input type="range" id="satisfaction_level" min="0" max="100" step="1" value="50"></div>
+            <div class="field"><label for="last_evaluation">Last evaluation score <output id="last_evaluation_out">70%</output></label>
+              <input type="range" id="last_evaluation" min="0" max="100" step="1" value="70"></div>
+            <div class="field"><label for="number_project">Projects</label>
+              <input type="number" id="number_project" min="1" max="10" value="4" required></div>
+            <div class="field"><label for="average_monthly_hours">Average monthly hours</label>
+              <input type="number" id="average_monthly_hours" min="50" max="350" value="200" required></div>
+            <div class="field"><label for="time_spend_company">Years at company</label>
+              <input type="number" id="time_spend_company" min="1" max="40" value="3" required></div>
+            <div class="field"><label for="salary">Salary level</label>
+              <select id="salary"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></div>
+            <div class="field"><label for="Work_accident">Work accident</label>
+              <select id="Work_accident"><option value="0">No</option><option value="1">Yes</option></select></div>
+            <div class="field"><label for="promotion_last_5years">Promoted in last 5 years</label>
+              <select id="promotion_last_5years"><option value="0">No</option><option value="1">Yes</option></select></div>
+          </div>
+          <button type="submit" id="predict-btn" class="btn">Predict risk</button>
+          <p id="form-error" class="form-error" role="alert"></p>
+        </form>
+      </section>
+    </main>
+    <footer>HR Analytics &bull; Random Forest &bull; ML Website Project</footer>
+  </div>
+</div>
+<script src="../utils/config.js"></script>
+<script src="../hooks/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/data-collection.js"></script>
+</body>
+</html>

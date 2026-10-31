@@ -1,0 +1,21 @@
+/* ===== Data Collection + Result screens ===== */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 20px}
+.field label{display:flex;justify-content:space-between;font-weight:700;font-size:.92rem;margin-bottom:4px}
+.field label output{font-weight:600;color:var(--muted)}
+.field input[type=number],.field select{width:100%;padding:9px 12px;font:inherit;color:var(--ink);background:var(--c4);border:1px solid var(--c1);border-radius:10px}
+.field input[type=range]{width:100%;accent-color:var(--brand)}
+.field input:focus-visible,.field select:focus-visible,.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.btn{margin-top:20px;padding:11px 26px;font:inherit;font-weight:700;color:var(--c5);background:var(--brand);border:0;border-radius:10px;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:wait}
+.form-error{color:#b3261e;font-weight:600;margin:12px 0 0}
+
+.risk-score{font-size:3.6rem;font-weight:700;line-height:1.1}
+.risk-verdict{font-size:1.15rem;font-weight:700;margin:2px 0 14px}
+.risk-low{color:#1d7a55}.risk-mid{color:#a86c00}.risk-high{color:#b3261e}
+.meter{height:12px;border-radius:99px;background:var(--c2);overflow:hidden}
+.meter span{display:block;height:100%;width:0;border-radius:99px;transition:width .6s ease}
+.meter span.risk-low{background:#2f8f6b}.meter span.risk-mid{background:#d99a1e}.meter span.risk-high{background:#c8402f}
+.risk-note{font-size:.85rem;margin:12px 0 18px}
+.inputs{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:.92rem}
+.inputs th,.inputs td{text-align:left;padding:7px 4px;border-bottom:1px solid var(--line)}
+.inputs th{font-weight:600;color:var(--muted)}
