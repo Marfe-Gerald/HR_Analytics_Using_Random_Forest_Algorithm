@@ -41,7 +41,7 @@ a:hover{text-decoration:underline}
 
 /* Main + cards */
 main{max-width:980px;margin:-32px auto 0;padding:0 24px 48px;display:grid;gap:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:18px}
 .card{background:var(--c5);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow);
   opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease,box-shadow .2s ease,border-color .2s ease}
 .card.in{opacity:1;transform:none}
@@ -67,4 +67,25 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;padding:0 0 24px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .card{opacity:1;transform:none}
+}
+
+/* ===== Extra mobile responsiveness ===== */
+html{-webkit-text-size-adjust:100%}
+img,svg,table{max-width:100%}
+.card{overflow-wrap:anywhere}
+.form-grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+.table-wrap{-webkit-overflow-scrolling:touch}
+@media (max-width:780px){
+  .field input[type=number],.field select{font-size:16px;min-height:44px}
+  .nav a{min-height:44px}
+  .btn{width:100%;min-height:46px}
+  .card{padding:18px}
+  .risk-score{font-size:2.8rem}
+  .inputs{font-size:.85rem}
+}
+@media (max-width:420px){
+  .page-header{padding:22px 14px 44px}
+  main{padding:0 10px 32px}
+  .card{padding:16px}
+  .history{font-size:.82rem}
 }
