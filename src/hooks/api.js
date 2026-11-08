@@ -44,7 +44,9 @@ async function predictAttrition(payload) {
   return res.json(); // { will_leave: boolean, probability_left: number }
 }
 function pingServer() {
-  fetch(API_URL + "/", { method: "GET", mode: "no-cors", cache: "no-store" }).catch(() => {});
+  fetch(API_URL + "/", { method: "GET", mode: "no-cors", cache: "no-store" })
+    .then(() => console.log("[keep-alive] pinged", API_URL, new Date().toLocaleTimeString()))
+    .catch((e) => console.warn("[keep-alive] ping failed", e));
 }
 pingServer();
 setInterval(pingServer, 5 * 60 * 1000);S
