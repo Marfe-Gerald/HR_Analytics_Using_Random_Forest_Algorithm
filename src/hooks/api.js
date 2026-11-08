@@ -43,3 +43,9 @@ async function predictAttrition(payload) {
   if (!res.ok) throw await apiError(res);
   return res.json(); // { will_leave: boolean, probability_left: number }
 }
+function pingServer() {
+  fetch(API_URL + "/", { method: "GET", mode: "no-cors", cache: "no-store" }).catch(() => {});
+}
+pingServer();
+setInterval(pingServer, 5 * 60 * 1000);S
+
