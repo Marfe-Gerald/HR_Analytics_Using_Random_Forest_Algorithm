@@ -22,7 +22,7 @@ if (!saved) {
 
   box.innerHTML =
     '<div class="risk-score risk-' + level + '">' + pct + '%</div>' +
-    '<p class="risk-verdict">' + (saved.result.will_leave ? "Likely to leave" : "Likely to stay") + '</p>' +
+    '<p class="risk-verdict">' + (saved.result.will_leave ? "Employee likely to leave" : "Employee likely to stay") + '</p>' +
     '<div class="meter" role="img" aria-label="Risk ' + pct + ' percent"><span class="risk-' + level + '"></span></div>' +
     '<p class="muted risk-note">This is a risk score from a model trained on balanced data, not an exact probability.</p>' +
     '<table class="inputs">' + rows + '</table>' +
