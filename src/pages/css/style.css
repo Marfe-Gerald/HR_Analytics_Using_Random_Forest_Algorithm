@@ -89,3 +89,6 @@ img,svg,table{max-width:100%}
   .card{padding:16px}
   .history{font-size:.82rem}
 }
+main{grid-template-columns:minmax(0,1fr)}
+.card{min-width:0}
+@media (max-width:780px){.layout{grid-template-columns:minmax(0,1fr)}}
